@@ -13,6 +13,10 @@ services.
 
 ![App demo](https://github.com/user-attachments/assets/12b34e71-5231-4712-a21a-51bf1d828c13)
 
+### Walkthrough
+
+https://github.com/user-attachments/assets/234c7804-b035-49db-ba89-52c26c09b8fa
+
 ---
 
 ## Contents
