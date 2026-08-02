@@ -216,18 +216,13 @@ class GenStep1View extends GetView<GenStep1Controller> {
                         final w = ctrl.weather.value;
                         if (w == null) return const _EmptyWeatherHint();
 
-                        final city = (w.city ?? '').toString();
-                        final country = (w.country ?? '').toString();
-                        final condition = (w.condition ?? '').toString();
-                        final temp = (w.temperatureCelsius is num)
-                            ? (w.temperatureCelsius as num).toDouble()
-                            : double.tryParse(
-                                    (w.temperatureCelsius ?? '0').toString(),
-                                  ) ??
-                                  0.0;
-                        final humidity = (w.humidity is num)
-                            ? (w.humidity as num).toInt()
-                            : int.tryParse((w.humidity ?? '0').toString()) ?? 0;
+                        // WeatherInfo.fromJson already coerces and defaults
+                        // every field, so these are plain reads.
+                        final city = w.city;
+                        final country = w.country;
+                        final condition = w.condition;
+                        final temp = w.temperatureCelsius;
+                        final humidity = w.humidity;
                         final idx = ctrl.weatherIndex.value;
 
                         return AnimatedSwitcher(

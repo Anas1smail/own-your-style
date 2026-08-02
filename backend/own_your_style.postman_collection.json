@@ -1,10 +1,7 @@
 {
  "info": {
-  "_postman_id": "a944f071-27fd-4d54-95b4-0423c9a24b0a",
   "name": "own_your_style",
-  "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-  "_exporter_id": "25135338",
-  "_collection_link": "https://gabby03hanna-522772.postman.co/workspace/gabby-al-hanna's-Workspace~9185fc19-b5a9-41ad-8a14-6b1ced876894/collection/47226736-a944f071-27fd-4d54-95b4-0423c9a24b0a?action=share&source=collection_link&creator=25135338"
+  "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
  },
  "item": [
   {
@@ -316,7 +313,7 @@
        "urlencoded": [
         {
          "key": "first_name",
-         "value": "gabby",
+         "value": "Jane",
          "type": "text"
         },
         {

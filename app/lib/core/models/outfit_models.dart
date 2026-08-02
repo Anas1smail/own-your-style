@@ -1,5 +1,4 @@
 // lib/core/models/outfit_models.dart
-import 'package:flutter/foundation.dart';
 import '../services/api_service.dart';
 
 class ItemLayer {

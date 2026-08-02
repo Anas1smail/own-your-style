@@ -192,8 +192,6 @@ class GenStep3View extends GetView<GenStep3Controller> {
       bottomNavigationBar: SafeArea(
         top: false,
         child: Obx(() {
-          final outfit = (ctrl.outfits.isNotEmpty) ? ctrl.outfits[ctrl.selectedIndex.value] : null;
-
           return Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
             child: Row(
@@ -239,33 +237,6 @@ class GenStep3View extends GetView<GenStep3Controller> {
             ),
           );
         }),
-      ),
-    );
-  }
-
-  Widget _iconAction({
-    required VoidCallback onTap,
-    required IconData icon,
-    required String label,
-    bool active = false,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              color: active ? AppColors.primary : Colors.white,
-              shape: BoxShape.circle,
-              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 8, offset: const Offset(0, 4))],
-            ),
-            padding: const EdgeInsets.all(12),
-            child: Icon(icon, color: active ? Colors.white : Colors.black54, size: 22),
-          ),
-          const SizedBox(height: 6),
-          Text(label, style: TextStyle(color: active ? AppColors.primary : Colors.black54, fontSize: 12)),
-        ],
       ),
     );
   }

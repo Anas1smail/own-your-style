@@ -347,8 +347,8 @@ class GenStep3Controller extends GetxController {
     }
 
     final double temp = o.temperature;
-    final String occasion = o.occasion ?? '';
-    final String weather = o.weather ?? 'clear';
+    final String occasion = o.occasion;
+    final String weather = o.weather;
 
     regenerating.value = true;
     try {
@@ -358,23 +358,14 @@ class GenStep3Controller extends GetxController {
         occasion: occasion,
       );
 
-      if (resp is Map<String, dynamic>) {
-        loadFromGeneratedResponse(resp);
-        Get.snackbar(
-          'Regenerated',
-          'A new outfit was generated',
-          snackPosition: SnackPosition.BOTTOM,
-        );
-      } else if (resp is Map) {
-        loadFromGeneratedResponse(Map<String, dynamic>.from(resp));
-        Get.snackbar(
-          'Regenerated',
-          'A new outfit was generated',
-          snackPosition: SnackPosition.BOTTOM,
-        );
-      } else {
-        Get.snackbar('Regenerate failed', 'Unexpected generator response');
-      }
+      // generateOutfit is typed Future<Map<String, dynamic>>, so the shape is
+      // guaranteed here; a malformed body surfaces as a throw instead.
+      loadFromGeneratedResponse(resp);
+      Get.snackbar(
+        'Regenerated',
+        'A new outfit was generated',
+        snackPosition: SnackPosition.BOTTOM,
+      );
     } catch (e, st) {
       debugPrint('regenerate() error: $e\n$st');
       Get.snackbar('Regenerate failed', e.toString());

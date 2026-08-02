@@ -1,7 +1,6 @@
 // lib/modules/looks/views/looks_view.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../../core/constants/app_colors.dart';
 import '../controllers/looks_controller.dart';
@@ -39,10 +38,6 @@ class LooksView extends GetView<LooksController> {
             itemCount: ctrl.outfits.length,
             itemBuilder: (ctx, i) {
               final outfit = ctrl.outfits[i];
-              final thumbUrl = outfit.layers.isNotEmpty
-                  ? outfit.layers.first.asset
-                  : null;
-              final headers = ctrl.imageHeaders;
               return GestureDetector(
                 onTap: () {
                   final transforms = ctrl.initialTransformsFor(outfit.id);

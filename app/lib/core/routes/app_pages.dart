@@ -30,7 +30,6 @@ import '../../modules/wardrobe/bindings/wardrobe_binding.dart';
 import '../../modules/wardrobe/views/add_item2_view.dart';
 import '../../modules/wardrobe/views/add_item_view.dart';
 import '../../modules/wardrobe/views/wardrobe_view.dart';
-import '../../modules/main/views/tabs/looks_tab.dart';
 import '../../modules/looks/bindings/looks_binding.dart';
 import '../../modules/looks/views/looks_view.dart';
 

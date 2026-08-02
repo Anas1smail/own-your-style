@@ -306,7 +306,6 @@ class AddItem2Controller extends GetxController {
       }
 
       final json = await ClothingService.analyzeImage(File(imagePath.value));
-      if (json == null) throw Exception('Analyzer returned null');
 
       final dynamic data = json['data'];
 

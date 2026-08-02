@@ -349,6 +349,10 @@ Requires the same Sanctum bearer token as the Laravel API.
 - The extraction pipeline writes intermediates to fixed filenames in the working
   directory, so concurrent requests would overwrite each other. Requests must be
   serialised until that is moved to per-request temporary paths.
+- Rejecting a non-fashion image returns `200` with `data: ["this is not
+  fashion"]` — an array where every other response carries an object. The client
+  special-cases it, so it works, but a `422` with a structured body would be the
+  correct contract.
 - The feature extraction service currently runs as a notebook rather than a
   standalone script.
 - Model weights download at runtime, so first startup requires network access.
